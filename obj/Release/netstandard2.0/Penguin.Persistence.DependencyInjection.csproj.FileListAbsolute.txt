@@ -1,0 +1,9 @@
+C:\Users\anloffredo\Documents\GitHub\Penguin.Persistence.DependencyInjection\bin\Release\netstandard2.0\Penguin.Persistence.DependencyInjection.deps.json
+C:\Users\anloffredo\Documents\GitHub\Penguin.Persistence.DependencyInjection\bin\Release\netstandard2.0\Penguin.Persistence.DependencyInjection.dll
+C:\Users\anloffredo\Documents\GitHub\Penguin.Persistence.DependencyInjection\bin\Release\netstandard2.0\Penguin.Persistence.DependencyInjection.pdb
+C:\Users\anloffredo\Documents\GitHub\Penguin.Persistence.DependencyInjection\bin\Release\netstandard2.0\Penguin.Persistence.DependencyInjection.xml
+C:\Users\anloffredo\Documents\GitHub\Penguin.Persistence.DependencyInjection\obj\Release\netstandard2.0\Penguin.Persistence.DependencyInjection.csproj.CoreCompileInputs.cache
+C:\Users\anloffredo\Documents\GitHub\Penguin.Persistence.DependencyInjection\obj\Release\netstandard2.0\Penguin.Persistence.DependencyInjection.AssemblyInfoInputs.cache
+C:\Users\anloffredo\Documents\GitHub\Penguin.Persistence.DependencyInjection\obj\Release\netstandard2.0\Penguin.Persistence.DependencyInjection.AssemblyInfo.cs
+C:\Users\anloffredo\Documents\GitHub\Penguin.Persistence.DependencyInjection\obj\Release\netstandard2.0\Penguin.Persistence.DependencyInjection.dll
+C:\Users\anloffredo\Documents\GitHub\Penguin.Persistence.DependencyInjection\obj\Release\netstandard2.0\Penguin.Persistence.DependencyInjection.pdb

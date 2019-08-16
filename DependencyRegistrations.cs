@@ -15,6 +15,7 @@ namespace Penguin.Persistence.DependencyInjection
     {
         #region Methods
 
+        const string CONNECTION_STRING_NAME = "DefaultConnectionString";
         /// <summary>
         /// Registers the dependencies
         /// </summary>
@@ -34,6 +35,11 @@ namespace Penguin.Persistence.DependencyInjection
                     }
 
                     string ConnectionString = Configuration.GetConnectionString("DefaultConnectionString");
+
+                    if (ConnectionString is null)
+                    {
+                        throw new NullReferenceException($"Can not find connection string {CONNECTION_STRING_NAME} in registered configuration provider");
+                    }
 
                     string Provider = "System.Data.SqlClient";
 
