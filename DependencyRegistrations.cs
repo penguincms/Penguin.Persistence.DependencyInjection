@@ -1,9 +1,11 @@
 using Penguin.Configuration.Abstractions;
+using Penguin.Debugging;
 using Penguin.DependencyInjection.Abstractions;
 using Penguin.DependencyInjection.Extensions;
 using Penguin.DependencyInjection.ServiceProviders;
 using Penguin.Persistence.Abstractions;
 using System;
+using System.Reflection;
 using DependencyEngine = Penguin.DependencyInjection.Engine;
 
 namespace Penguin.Persistence.DependencyInjection
@@ -21,6 +23,8 @@ namespace Penguin.Persistence.DependencyInjection
         /// </summary>
         public void RegisterDependencies()
         {
+            StaticLogger.Log($"Penguin.Persistence.DependencyInjection: {Assembly.GetExecutingAssembly().GetName().Version}", StaticLogger.LoggingLevel.Call);
+
             if (!DependencyEngine.IsRegistered<PersistenceConnectionInfo>())
             {
                 //Wonky ass logic to support old EF connection strings from web.config.
