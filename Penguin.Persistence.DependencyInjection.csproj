@@ -7,7 +7,7 @@
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageProjectUrl>http://www.penguinms.com/Nuget</PackageProjectUrl>
     <PackageIconUrl>http://www.penguinms.com/client/images/pg.png</PackageIconUrl>
-    <Version>1.0.4</Version>
+    <Version>1.0.5</Version>
 	<IncludeSymbols>true</IncludeSymbols>
 	<SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <Description>[Warning: Magic] Provides an implementation of IRegisterDependencies for the Penguin DependencyInjection system, that registers PersistenceConnectionInfo to resolve automagically so that it contains database connection info pulled from local configuration files ("DefaultConnectionString"). This ensures that all persistence systems can use the same database connection without explicit configuration. </Description>
@@ -15,8 +15,8 @@
 
   <ItemGroup>
     <PackageReference Include="Penguin.Configuration.Abstractions" Version="1.1.4" />
-    <PackageReference Include="Penguin.Debugging" Version="1.0.3" />
-    <PackageReference Include="Penguin.DependencyInjection" Version="2.2.2" />
+    <PackageReference Include="Penguin.Debugging" Version="1.0.4" />
+    <PackageReference Include="Penguin.DependencyInjection" Version="2.2.7" />
     <PackageReference Include="Penguin.Persistence.Abstractions" Version="1.3.0" />
   </ItemGroup>
 
