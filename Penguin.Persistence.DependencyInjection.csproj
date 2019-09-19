@@ -1,15 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
+  <Import Project="Penguin.Projects.Shared\Penguin.Projects.Shared.csproj" />
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageLicenseFile>License.txt</PackageLicenseFile>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageProjectUrl>https://github.com/penguincms/Penguin.Persistence.DependencyInjection</PackageProjectUrl>
-    <PackageIconUrl>http://www.penguinms.com/client/images/pg.png</PackageIconUrl>
     <Version>1.0.5</Version>
-	<IncludeSymbols>true</IncludeSymbols>
-	<SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <Description>[Warning: Magic] Provides an implementation of IRegisterDependencies for the Penguin DependencyInjection system, that registers PersistenceConnectionInfo to resolve automagically so that it contains database connection info pulled from local configuration files ("DefaultConnectionString"). This ensures that all persistence systems can use the same database connection without explicit configuration. </Description>
   </PropertyGroup>
 
@@ -19,19 +12,4 @@
     <PackageReference Include="Penguin.DependencyInjection" Version="2.2.9" />
     <PackageReference Include="Penguin.Persistence.Abstractions" Version="1.3.0" />
   </ItemGroup>
-
- <ItemGroup>
-    <None Include="License.txt">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <WarningsAsErrors>NU1605, CS1591</WarningsAsErrors>
-    <DocumentationFile>Penguin.Persistence.DependencyInjection.xml</DocumentationFile>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DebugType>full</DebugType>
-    <DocumentationFile>Penguin.Persistence.DependencyInjection.xml</DocumentationFile>
-  </PropertyGroup>
 </Project>
