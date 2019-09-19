@@ -17,7 +17,8 @@ namespace Penguin.Persistence.DependencyInjection
     {
         #region Methods
 
-        const string CONNECTION_STRING_NAME = "DefaultConnectionString";
+        private const string CONNECTION_STRING_NAME = "DefaultConnectionString";
+
         /// <summary>
         /// Registers the dependencies
         /// </summary>
@@ -55,7 +56,7 @@ namespace Penguin.Persistence.DependencyInjection
 
                     PersistenceConnectionInfo connectionInfo = new PersistenceConnectionInfo(ConnectionString, Provider);
 
-                    if(connectionInfo.ProviderType == ProviderType.SQLCE)
+                    if (connectionInfo.ProviderType == ProviderType.SQLCE)
                     {
                         connectionInfo.ProviderName = "System.Data.SqlServerCe.4.0";
                     }
