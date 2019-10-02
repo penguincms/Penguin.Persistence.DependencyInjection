@@ -1,6 +1,6 @@
 using Penguin.Configuration.Abstractions;
 using Penguin.Debugging;
-using Penguin.DependencyInjection.Abstractions;
+using Penguin.DependencyInjection.Abstractions.Interfaces;
 using Penguin.DependencyInjection.Extensions;
 using Penguin.DependencyInjection.ServiceProviders;
 using Penguin.Persistence.Abstractions;
