@@ -1,13 +1,10 @@
-using Microsoft.Extensions.DependencyInjection;
-using Penguin.Configuration.Abstractions;
 using Penguin.Configuration.Abstractions.Interfaces;
 using Penguin.Debugging;
+using Penguin.DependencyInjection.Abstractions.Enums;
 using Penguin.DependencyInjection.Abstractions.Interfaces;
-using Penguin.DependencyInjection.ServiceProviders;
 using Penguin.Persistence.Abstractions;
 using System;
 using System.Reflection;
-using DependencyEngine = Penguin.DependencyInjection.Engine;
 
 namespace Penguin.Persistence.DependencyInjection
 {
@@ -23,17 +20,22 @@ namespace Penguin.Persistence.DependencyInjection
         /// <summary>
         /// Registers the dependencies
         /// </summary>
-        public void RegisterDependencies()
+        public void RegisterDependencies(IServiceRegister serviceRegister)
         {
+            if (serviceRegister is null)
+            {
+                throw new ArgumentNullException(nameof(serviceRegister));
+            }
+
             StaticLogger.Log($"Penguin.Persistence.DependencyInjection: {Assembly.GetExecutingAssembly().GetName().Version}", StaticLogger.LoggingLevel.Call);
 
-            if (!DependencyEngine.IsRegistered<PersistenceConnectionInfo>())
-            {
-                //Wonky ass logic to support old EF connection strings from web.config.
-                //Most of this can be removed when CE isn't needed.
-                DependencyEngine.Register<PersistenceConnectionInfo>((IServiceProvider ServiceProvider) =>
+            //if (!DependencyEngine.IsRegistered<PersistenceConnectionInfo>())
+            //{
+            //Wonky ass logic to support old EF connection strings from web.config.
+            //Most of this can be removed when CE isn't needed.
+            serviceRegister.Register<PersistenceConnectionInfo>((IServiceProvider ServiceProvider) =>
                 {
-                    IProvideConfigurations Configuration = ServiceProvider.GetService<IProvideConfigurations>();
+                    IProvideConfigurations Configuration = ServiceProvider.GetService(typeof(IProvideConfigurations)) as IProvideConfigurations;
 
                     if (Configuration is null)
                     {
@@ -63,11 +65,9 @@ namespace Penguin.Persistence.DependencyInjection
                     }
 
                     return connectionInfo;
-                }, typeof(SingletonServiceProvider));
+                }, ServiceLifetime.Singleton);
             }
-        }
-
-        public void RegisterDependencies(Action<Type, Type, ServiceLifetime> registrationFunc) => RegisterDependencies();
+        //}
 
         #endregion Methods
     }

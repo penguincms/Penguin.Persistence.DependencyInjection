@@ -2,13 +2,14 @@
   <Import Project="Penguin.Projects.Shared\Penguin.Projects.Shared.csproj" />
   <PropertyGroup>
     <PackageProjectUrl>https://github.com/penguincms/Penguin.Persistence.DependencyInjection</PackageProjectUrl>
-    <Version>3.0.0</Version>
+    <Version>3.0.1</Version>
     <Description>[Warning: Magic] Provides an implementation of IRegisterDependencies for the Penguin DependencyInjection system, that registers PersistenceConnectionInfo to resolve automagically so that it contains database connection info pulled from local configuration files ("DefaultConnectionString"). This ensures that all persistence systems can use the same database connection without explicit configuration. </Description>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Penguin.Configuration.Abstractions" Version="3.0.0" />
-    <PackageReference Include="Penguin.DependencyInjection" Version="4.0.7" />
+    <PackageReference Include="Penguin.Debugging" Version="2.0.1" />
+    <PackageReference Include="Penguin.DependencyInjection.Abstractions" Version="2.1.1" />
     <PackageReference Include="Penguin.Persistence.Abstractions" Version="3.0.0" />
   </ItemGroup>
 </Project>
