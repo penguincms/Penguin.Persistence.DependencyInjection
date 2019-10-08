@@ -1,7 +1,8 @@
+using Microsoft.Extensions.DependencyInjection;
 using Penguin.Configuration.Abstractions;
+using Penguin.Configuration.Abstractions.Interfaces;
 using Penguin.Debugging;
 using Penguin.DependencyInjection.Abstractions.Interfaces;
-using Penguin.DependencyInjection.Extensions;
 using Penguin.DependencyInjection.ServiceProviders;
 using Penguin.Persistence.Abstractions;
 using System;
@@ -65,6 +66,8 @@ namespace Penguin.Persistence.DependencyInjection
                 }, typeof(SingletonServiceProvider));
             }
         }
+
+        public void RegisterDependencies(Action<Type, Type, ServiceLifetime> registrationFunc) => RegisterDependencies();
 
         #endregion Methods
     }
