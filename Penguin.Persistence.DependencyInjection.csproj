@@ -7,9 +7,9 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Penguin.Debugging" Version="2.0.1" />
-    <PackageReference Include="Penguin.DependencyInjection.Abstractions" Version="2.1.1" />
-    <PackageReference Include="Penguin.Persistence.Abstractions" Version="3.0.0" />
-    <PackageReference Include="Penguin.Configuration.Abstractions" Version="3.0.1-63707652289" />
+    <PackageReference Include="Penguin.DependencyInjection.Abstractions" Version="2.1.5-T9LXGUJ" />
+    <PackageReference Include="Penguin.Persistence.Abstractions" Version="3.0.1-T9LXGUJ" />
+    <PackageReference Include="Penguin.Configuration.Abstractions" Version="3.0.1-T9LXGUJ" />
+    <PackageReference Include="Penguin.Debugging" Version="2.0.1-T9LXGUJ" />
   </ItemGroup>
 </Project>
