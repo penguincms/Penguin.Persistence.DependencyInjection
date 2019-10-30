@@ -5,11 +5,13 @@
     <Version>3.0.1</Version>
     <Description>[Warning: Magic] Provides an implementation of IRegisterDependencies for the Penguin DependencyInjection system, that registers PersistenceConnectionInfo to resolve automagically so that it contains database connection info pulled from local configuration files ("DefaultConnectionString"). This ensures that all persistence systems can use the same database connection without explicit configuration. </Description>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Penguin.Persistence.DependencyInjection</AssemblyName>
+    <RootNamespace>Penguin.Persistence.DependencyInjection</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Penguin.DependencyInjection.Abstractions" Version="2.1.6-T9M1HHH" />
-    <PackageReference Include="Penguin.Persistence.Abstractions" Version="3.0.2-T9M1HHH" />
-    <PackageReference Include="Penguin.Configuration.Abstractions" Version="3.0.2-T9M1HHH" />
-    <PackageReference Include="Penguin.Debugging" Version="2.0.2-T9M1HHH" />
+    <PackageReference Include="Penguin.DependencyInjection.Abstractions" Version="2.1.6-T9M2XAX" />
+    <PackageReference Include="Penguin.Persistence.Abstractions" Version="3.0.2-T9M2XAX" />
+    <PackageReference Include="Penguin.Configuration.Abstractions" Version="3.0.2-T9M2XAX" />
+    <PackageReference Include="Penguin.Debugging" Version="2.0.2-T9M2XAX" />
   </ItemGroup>
 </Project>

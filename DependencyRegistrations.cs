@@ -1,10 +1,13 @@
 using Penguin.Configuration.Abstractions.Interfaces;
+using Penguin.Configuration.Abstractions.Exceptions;
 using Penguin.Debugging;
 using Penguin.DependencyInjection.Abstractions.Enums;
 using Penguin.DependencyInjection.Abstractions.Interfaces;
 using Penguin.Persistence.Abstractions;
 using System;
 using System.Reflection;
+using Penguin.Persistence.Abstractions.Constants;
+using Penguin.Persistence.Abstractions.Exceptions;
 
 namespace Penguin.Persistence.DependencyInjection
 {
@@ -13,10 +16,6 @@ namespace Penguin.Persistence.DependencyInjection
     /// </summary>
     public class DependencyRegistrations : IRegisterDependencies
     {
-        #region Methods
-
-        private const string CONNECTION_STRING_NAME = "DefaultConnectionString";
-
         /// <summary>
         /// Registers the dependencies
         /// </summary>
@@ -33,7 +32,7 @@ namespace Penguin.Persistence.DependencyInjection
             //{
             //Wonky ass logic to support old EF connection strings from web.config.
             //Most of this can be removed when CE isn't needed.
-            serviceRegister.Register<PersistenceConnectionInfo>((IServiceProvider ServiceProvider) =>
+            serviceRegister.Register((IServiceProvider ServiceProvider) =>
                 {
                     IProvideConfigurations Configuration = ServiceProvider.GetService(typeof(IProvideConfigurations)) as IProvideConfigurations;
 
@@ -46,7 +45,18 @@ namespace Penguin.Persistence.DependencyInjection
 
                     if (ConnectionString is null)
                     {
-                        throw new NullReferenceException($"Can not find connection string {CONNECTION_STRING_NAME} in registered configuration provider");
+                        string error = $"Can not find connection string {Strings.CONNECTION_STRING_NAME} in registered configuration provider";
+
+                        try
+                        {
+                            throw new DatabaseNotConfiguredException(error,
+                                new MissingConfigurationException(Strings.CONNECTION_STRING_NAME, error
+                                ));
+                        } //Notify dev if possible
+                        catch (Exception ex)
+                        {
+                            return new PersistenceConnectionInfo("", "");
+                        }
                     }
 
                     string Provider = "System.Data.SqlClient";
@@ -66,9 +76,8 @@ namespace Penguin.Persistence.DependencyInjection
 
                     return connectionInfo;
                 }, ServiceLifetime.Singleton);
-            }
-        //}
+        }
 
-        #endregion Methods
+        //}
     }
 }
