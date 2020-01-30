@@ -9,7 +9,7 @@
             Contains the interface that automatically registers PersistenceConnectionInfo to resolve to DefaultConnectionString from the default IProvideConfiguration source
             </summary>
         </member>
-        <member name="M:Penguin.Persistence.DependencyInjection.DependencyRegistrations.RegisterDependencies">
+        <member name="M:Penguin.Persistence.DependencyInjection.DependencyRegistrations.RegisterDependencies(Penguin.DependencyInjection.Abstractions.Interfaces.IServiceRegister)">
             <summary>
             Registers the dependencies
             </summary>

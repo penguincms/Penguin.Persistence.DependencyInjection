@@ -10,9 +10,9 @@
     <DocumentationFile>Penguin.Persistence.DependencyInjection.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Penguin.DependencyInjection.Abstractions" Version="2.1.6-T9QC72V" />
-    <PackageReference Include="Penguin.Persistence.Abstractions" Version="3.0.2-T9QC72V" />
-    <PackageReference Include="Penguin.Configuration.Abstractions" Version="3.0.2-T9QC72V" />
-    <PackageReference Include="Penguin.Debugging" Version="2.0.2-T9QC72V" />
+    <PackageReference Include="Penguin.DependencyInjection.Abstractions" Version="2.1.6-T9QUIQ4" />
+    <PackageReference Include="Penguin.Persistence.Abstractions" Version="3.0.2-T9QUIQ4" />
+    <PackageReference Include="Penguin.Configuration.Abstractions" Version="3.0.2-T9QUIQ4" />
+    <PackageReference Include="Penguin.Debugging" Version="2.0.2-T9QUIQ4" />
   </ItemGroup>
 </Project>
