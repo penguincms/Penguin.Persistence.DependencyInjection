@@ -7,6 +7,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Penguin.Persistence.DependencyInjection</AssemblyName>
     <RootNamespace>Penguin.Persistence.DependencyInjection</RootNamespace>
+    <DocumentationFile>Penguin.Persistence.DependencyInjection.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Penguin.DependencyInjection.Abstractions" Version="2.1.6-T9QC72V" />
