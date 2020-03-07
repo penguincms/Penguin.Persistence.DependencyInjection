@@ -19,6 +19,7 @@ namespace Penguin.Persistence.DependencyInjection
         /// <summary>
         /// Registers the dependencies
         /// </summary>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Globalization", "CA1307:Specify StringComparison", Justification = "<Pending>")]
         public void RegisterDependencies(IServiceRegister serviceRegister)
         {
             if (serviceRegister is null)
@@ -34,9 +35,7 @@ namespace Penguin.Persistence.DependencyInjection
             //Most of this can be removed when CE isn't needed.
             serviceRegister.Register((IServiceProvider ServiceProvider) =>
                 {
-                    IProvideConfigurations Configuration = ServiceProvider.GetService(typeof(IProvideConfigurations)) as IProvideConfigurations;
-
-                    if (Configuration is null)
+                    if (!(ServiceProvider.GetService(typeof(IProvideConfigurations)) is IProvideConfigurations Configuration))
                     {
                         throw new NullReferenceException("IProvideConfigurations must be registered before building database connection");
                     }
@@ -53,7 +52,7 @@ namespace Penguin.Persistence.DependencyInjection
                                 new MissingConfigurationException(Strings.CONNECTION_STRING_NAME, error
                                 ));
                         } //Notify dev if possible
-                        catch (Exception ex)
+                        catch (Exception)
                         {
                             return new PersistenceConnectionInfo("", "");
                         }
