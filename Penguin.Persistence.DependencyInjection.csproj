@@ -11,8 +11,8 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Penguin.DependencyInjection.Abstractions" Version="5.0.1-TA56XNT" />
-    <PackageReference Include="Penguin.Debugging" Version="5.0.1-TA56XNT" />
     <PackageReference Include="Penguin.Configuration.Abstractions" Version="5.0.1-TA56XNT" />
     <PackageReference Include="Penguin.Persistence.Abstractions" Version="5.0.1-TA56XNT" />
+    <PackageReference Include="Penguin.Debugging" Version="5.0.1-TA5WW7O" />
   </ItemGroup>
 </Project>
