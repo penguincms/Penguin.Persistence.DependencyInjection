@@ -12,7 +12,7 @@
   <ItemGroup>
     <PackageReference Include="Penguin.DependencyInjection.Abstractions" Version="5.0.2-TA9KKLU" />
     <PackageReference Include="Penguin.Configuration.Abstractions" Version="5.0.2-TA9KKLU" />
-    <PackageReference Include="Penguin.Persistence.Abstractions" Version="5.0.2-TA9KKLU" />
     <PackageReference Include="Penguin.Debugging" Version="5.0.2-TA9KKLU" />
+    <PackageReference Include="Penguin.Persistence.Abstractions" Version="5.0.2-TAA4YFP" />
   </ItemGroup>
 </Project>
