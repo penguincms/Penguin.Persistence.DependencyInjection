@@ -19,7 +19,6 @@ namespace Penguin.Persistence.DependencyInjection
         /// <summary>
         /// Registers the dependencies
         /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Globalization", "CA1307:Specify StringComparison", Justification = "<Pending>")]
         public void RegisterDependencies(IServiceRegister serviceRegister)
         {
             if (serviceRegister is null)
