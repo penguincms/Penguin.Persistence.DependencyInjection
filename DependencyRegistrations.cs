@@ -34,7 +34,7 @@ namespace Penguin.Persistence.DependencyInjection
             //Most of this can be removed when CE isn't needed.
             serviceRegister.Register((IServiceProvider ServiceProvider) =>
                 {
-                    if (!(ServiceProvider.GetService(typeof(IProvideConfigurations)) is IProvideConfigurations Configuration))
+                    if (ServiceProvider.GetService(typeof(IProvideConfigurations)) is not IProvideConfigurations Configuration)
                     {
                         throw new NullReferenceException("IProvideConfigurations must be registered before building database connection");
                     }
@@ -65,7 +65,7 @@ namespace Penguin.Persistence.DependencyInjection
                         ConnectionString = Configuration.GetConnectionString(ConnectionString);
                     }
 
-                    PersistenceConnectionInfo connectionInfo = new PersistenceConnectionInfo(ConnectionString, Provider);
+                    PersistenceConnectionInfo connectionInfo = new(ConnectionString, Provider);
 
                     if (connectionInfo.ProviderType == ProviderType.SQLCE)
                     {
