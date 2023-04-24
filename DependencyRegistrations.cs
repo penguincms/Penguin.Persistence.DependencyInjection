@@ -28,10 +28,6 @@ namespace Penguin.Persistence.DependencyInjection
 
             StaticLogger.Log($"Penguin.Persistence.DependencyInjection: {Assembly.GetExecutingAssembly().GetName().Version}", StaticLogger.LoggingLevel.Call);
 
-            //if (!DependencyEngine.IsRegistered<PersistenceConnectionInfo>())
-            //{
-            //Wonky ass logic to support old EF connection strings from web.config.
-            //Most of this can be removed when CE isn't needed.
             serviceRegister.Register((IServiceProvider ServiceProvider) =>
                 {
                     if (ServiceProvider.GetService(typeof(IProvideConfigurations)) is not IProvideConfigurations Configuration)
@@ -75,7 +71,5 @@ namespace Penguin.Persistence.DependencyInjection
                     return connectionInfo;
                 }, ServiceLifetime.Singleton);
         }
-
-        //}
     }
 }
